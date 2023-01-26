@@ -9,6 +9,7 @@ var router = require("./src/router/router.js");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(router);
 
 console.log("Servidor en el puerto " + PORT);
