@@ -3,7 +3,12 @@ const connection = require("../db/db.js")
 
 const getTodos = (req, res) => {
     connection.query('SELECT * from todo', (err, results) => {
-        res.json(results)
+        if (err != null) {
+            console.log(err)
+            res.send("No se han encontrado los todos.")
+        } else {
+            res.json(results)
+        }
     })
 }
 
@@ -11,9 +16,12 @@ const createTodo = (req, res) => {
     const {nombre, estado, info} = req.body
     console.log(req.body)
     connection.query('INSERT INTO todo(estado, informacion, nombreTarea) VALUES(?,?,?)', [estado, info, nombre], (err, results) => {
-        console.log(err)
-        console.log(results)
-        res.send('Creado')
+        if (err != null) {
+            console.log(err)
+            res.send("No se ha podido crear el todo.")
+        } else {
+            res.send('Creado')
+        }
     })
 }
 
