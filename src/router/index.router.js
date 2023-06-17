@@ -5,4 +5,7 @@ router.get('/', (req, res) => {
     res.render('index');
 })
 
+router.get('/crearTodo', (req, res) => {
+    res.render("crearTodo")
+})
 module.exports = router;
