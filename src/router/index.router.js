@@ -13,4 +13,8 @@ router.get('/infoTodo', (req, res) => {
     res.render('info-todo')
 })
 
+router.get('/modificarTodo', (req, res) => {
+    res.render('modificarTodo')
+})
+
 module.exports = router;

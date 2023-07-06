@@ -49,10 +49,11 @@ const deleteTodo = (req, res) => {
 }
 
 const updateTodo = (req, res) => {
-    const {nombre, info, estado} = req.body
-    connection.query('UPDATE todo SET nombreTarea = IFNULL(?, nombreTarea), informacion = IFNULL(?, informacion), estado = IFNULL(?, estado)', [nombre, info, estado], (err, results) => {
+    const {nombre, info, estado, id} = req.body
+
+    connection.query('UPDATE todo SET nombreTarea = IFNULL(?, nombreTarea), informacion = IFNULL(?, informacion), estado = IFNULL(?, estado) WHERE id = ?', [nombre, info, estado, id], (err, results) => {
         if (results.affectedRows > 0) {
-        res.send('todo actualizado')
+        res.redirect(`/infoTodo?id=${id}`)
         }
         else {
             res.send('No se encontro el todo')

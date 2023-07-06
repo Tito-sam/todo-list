@@ -21,6 +21,10 @@ const ObtenerInfoTodo = () => {
         const informacion = document.createElement('p')
         informacion.textContent = data[0].informacion
         content.appendChild(informacion)
+        const btnModificar = document.createElement('a')
+        btnModificar.href = `/modificarTodo?id=${id_todo}`
+        btnModificar.textContent = "Modificar Todo"
+        content.appendChild(btnModificar)
     })
     .catch(err => console.log(err))
 }

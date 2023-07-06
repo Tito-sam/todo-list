@@ -4,9 +4,6 @@ const informacion = document.querySelector('#info')
 const estado = document.querySelector('#estado')
 
 
-console.log(btnAgregar, nombreTarea, informacion, estado)
-
-
 const CrearTodo = () => {
     let data = `{
         "nombre" : "${nombreTarea.value}",
@@ -30,6 +27,7 @@ const CrearTodo = () => {
             return res.json()
         }
     })
+    .then((data) => console.log(data))
     .catch( err => console.log(err))
 }
 btnAgregar.addEventListener('click', CrearTodo)
