@@ -20,7 +20,7 @@ const createTodo = (req, res) => {
             console.log(err)
             res.send("No se ha podido crear el todo.")
         } else {
-            res.send('Creado')
+            res.redirect('/')
         }
     })
 }

@@ -8,4 +8,9 @@ router.get('/', (req, res) => {
 router.get('/crearTodo', (req, res) => {
     res.render("crearTodo")
 })
+
+router.get('/infoTodo', (req, res) => {
+    res.render('info-todo')
+})
+
 module.exports = router;

@@ -20,7 +20,7 @@ const obtenerTodos = () => {
                 const div = document.createElement('div')
                 div.innerHTML = `
                 <i class="todo">
-                <a href="#" class="todoLink">${data[i].nombreTarea}</a>
+                <a href="/infoTodo?id=${data[i].id}" class="todoLink">${data[i].nombreTarea}</a>
                 </i>
                 `
                 listaTodos.appendChild(div)
