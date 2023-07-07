@@ -41,9 +41,9 @@ const deleteTodo = (req, res) => {
     const id_todo = req.params.id
     connection.query('DELETE FROM todo WHERE id = ?', [id_todo], (err, results) => {
         if (results.affectedRows > 0) {
-            res.send('todo Eliminado');
+            res.redirect('/');
         } else {
-            res.send('todo no encontrado')
+            res.json({"mensaje":'todo no encontrado'})
         }
     })
 }
@@ -53,7 +53,7 @@ const updateTodo = (req, res) => {
 
     connection.query('UPDATE todo SET nombreTarea = IFNULL(?, nombreTarea), informacion = IFNULL(?, informacion), estado = IFNULL(?, estado) WHERE id = ?', [nombre, info, estado, id], (err, results) => {
         if (results.affectedRows > 0) {
-        res.redirect(`/infoTodo?id=${id}`)
+            res.redirect(`/infoTodo?id=${id}`)
         }
         else {
             res.send('No se encontro el todo')

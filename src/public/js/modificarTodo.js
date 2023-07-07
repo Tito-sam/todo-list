@@ -24,11 +24,7 @@ const modificarTodo = () => {
     })
     fetch(request)
     .then((res) => {
-        if(res.ok) {
-            window.location.href = res.url
-        } else {
-            return res.json()
-        }
+        window.location.href = res.url
     })
     .catch( err => console.log(err))
 }
