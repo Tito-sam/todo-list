@@ -7,19 +7,27 @@
         <title>Agregar Todo</title>
     </head>
     <body>
-        <h1><a href="/">Todo List</a></h1>
-        <h2>Agregar Todo</h2>
-        <div class="divAgregarTodo">
-            <label for="nombreTarea">Nombre del Todo</label>
-            <input type="text" id="nombre" name="nombreTarea">
-            <label for="estado">Estado del todo</label>
-            <input type="text" name="estado" id="estado">
-            <br>
-            <br>
-            <label for="Informacion">Nombre del Todo</label>
-            <textarea name="Informacion" rows="20" cols="30" id="info"></textarea>
-            <br>
-            <input type="submit" name="enviar" value="Agregar" id="btnAgregarTodo">
+        <div class="index">
+            <header>
+                <h1><a href="/">Todo List</a></h1>
+            </header>
+            <main>
+                <header>
+                    <h2>Agregar Todo</h2>
+                </header>
+                <div class="divAgregarTodo">
+                    <label for="nombreTarea">Nombre del Todo</label>
+                    <input type="text" id="nombre" name="nombreTarea">
+                    <label for="estado">Estado del todo</label>
+                    <input type="text" name="estado" id="estado">
+                    <br>
+                    <br>
+                    <label for="Informacion">Informacion</label>
+                    <textarea name="Informacion" rows="20" cols="30" id="info"></textarea>
+                    <br>
+                    <input type="submit" name="enviar" value="Agregar" id="btnAgregarTodo">
+                </div>
+            </main>
         </div>
     <script src="/js/agregarTodo.js"></script>
     </body>
