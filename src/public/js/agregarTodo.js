@@ -5,6 +5,15 @@ const estado = document.querySelector('#estado')
 
 
 const CrearTodo = () => {
+    let nombreEstado;
+    if (estado.value == '1') {
+        alert(estado.value);
+        nombreEstado = "Sin Comenzar";
+    } else if (estado.value == '2') {
+        nombreEstado = "En progreso";
+    } else {
+        nombreEstado = "Finalizado";
+    }  
     let data = `{
         "nombre" : "${nombreTarea.value}",
         "estado" : "${estado.value}",

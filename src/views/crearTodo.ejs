@@ -15,18 +15,25 @@
                 <header>
                     <h2>Agregar Todo</h2>
                 </header>
-                <div class="divAgregarTodo">
+                <section class="agregarTodo">
                     <label for="nombreTarea">Nombre del Todo</label>
                     <input type="text" id="nombre" name="nombreTarea">
                     <label for="estado">Estado del todo</label>
-                    <input type="text" name="estado" id="estado">
+                    <div class="select">
+                        <select name="estado" id="estado">
+                            <option value="1">Sin comenzar</option>
+                            <option value="2">En progreso</option>
+                            <option value="3">Finalizado</option>
+                        </select>
+                        <i></i>
+                    </div>
                     <br>
                     <br>
                     <label for="Informacion">Informacion</label>
                     <textarea name="Informacion" rows="20" cols="30" id="info"></textarea>
                     <br>
                     <input type="submit" name="enviar" value="Agregar" id="btnAgregarTodo">
-                </div>
+                </section>
             </main>
         </div>
     <script src="/js/agregarTodo.js"></script>
